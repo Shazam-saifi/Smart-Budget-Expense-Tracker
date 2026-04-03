@@ -1,0 +1,380 @@
+:root {
+  --bg: #f3efe6;
+  --bg-strong: #e1d4ba;
+  --surface: rgba(255, 252, 247, 0.88);
+  --surface-strong: #fffaf1;
+  --text: #1f2430;
+  --muted: #6d6a63;
+  --border: rgba(31, 36, 48, 0.12);
+  --accent: #d36b2c;
+  --accent-deep: #7c3f1d;
+  --income: #1f7a63;
+  --expense: #b44b36;
+  --savings: #275dad;
+  --shadow: 0 24px 60px rgba(57, 39, 16, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top left, rgba(211, 107, 44, 0.28), transparent 32%),
+    radial-gradient(circle at top right, rgba(39, 93, 173, 0.18), transparent 28%),
+    linear-gradient(180deg, #efe7d6 0%, #f7f2e8 48%, #efe7d7 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.auth-shell,
+.dashboard-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.hero-copy h1,
+.topbar h1 {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  line-height: 0.96;
+  margin: 8px 0 16px;
+  letter-spacing: -0.04em;
+}
+
+.hero-copy p,
+.topbar p,
+.section-heading p,
+.recommendation p,
+.budget-item p,
+.report-card p,
+.muted-text {
+  color: var(--muted);
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 250, 241, 0.8);
+  border: 1px solid rgba(31, 36, 48, 0.08);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.auth-card,
+.section-card,
+.stat-card,
+.report-card {
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.auth-card,
+.section-card {
+  border-radius: 28px;
+  padding: 24px;
+}
+
+.auth-card {
+  display: grid;
+  gap: 16px;
+}
+
+.tab-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgba(31, 36, 48, 0.05);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.tab,
+.primary-button,
+.ghost-button,
+.link-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.tab {
+  border-radius: 999px;
+  background: transparent;
+  padding: 12px;
+}
+
+.tab.active,
+.primary-button {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: white;
+}
+
+.primary-button,
+.ghost-button {
+  padding: 12px 18px;
+  border-radius: 16px;
+}
+
+.ghost-button {
+  background: rgba(31, 36, 48, 0.08);
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: var(--surface-strong);
+}
+
+.dashboard-shell {
+  padding: 28px 0 48px;
+}
+
+.topbar,
+.stats-grid,
+.content-grid {
+  margin-bottom: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.mini-field input {
+  width: 96px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  border-radius: 24px;
+  padding: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.stat-card strong {
+  font-size: 1.8rem;
+}
+
+.stat-card.income strong {
+  color: var(--income);
+}
+
+.stat-card.expense strong {
+  color: var(--expense);
+}
+
+.stat-card.savings strong {
+  color: var(--savings);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.form-grid.compact {
+  grid-template-columns: 1.4fr 1fr auto;
+  align-items: end;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.pill-row,
+.list-grid,
+.bars {
+  display: grid;
+  gap: 12px;
+}
+
+.pill-row {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  margin-top: 16px;
+}
+
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(31, 36, 48, 0.06);
+}
+
+.pill.income {
+  color: var(--income);
+}
+
+.pill.expense {
+  color: var(--expense);
+}
+
+.budget-item,
+.recommendation,
+.report-card {
+  border-radius: 20px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+
+.budget-item,
+.bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.budget-item.healthy {
+  background: rgba(31, 122, 99, 0.08);
+}
+
+.budget-item.warning {
+  background: rgba(211, 107, 44, 0.12);
+}
+
+.budget-item.critical,
+.recommendation.high {
+  background: rgba(180, 75, 54, 0.12);
+}
+
+.recommendation.medium {
+  background: rgba(211, 107, 44, 0.1);
+}
+
+.recommendation.low {
+  background: rgba(39, 93, 173, 0.1);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.link-button {
+  background: transparent;
+  color: var(--expense);
+}
+
+.bar-track {
+  background: rgba(31, 36, 48, 0.08);
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+}
+
+.error-text,
+.error-banner {
+  color: var(--expense);
+}
+
+.error-banner {
+  background: rgba(180, 75, 54, 0.08);
+  border: 1px solid rgba(180, 75, 54, 0.16);
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+.footer-space {
+  padding: 8px 2px;
+}
+
+@media (max-width: 900px) {
+  .auth-shell,
+  .content-grid,
+  .stats-grid,
+  .topbar,
+  .form-grid,
+  .form-grid.compact {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .topbar {
+    align-items: start;
+  }
+
+  .topbar-actions {
+    width: 100%;
+  }
+}

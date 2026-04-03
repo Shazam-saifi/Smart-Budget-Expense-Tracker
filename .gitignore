@@ -1,0 +1,21 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+backend/.venv/
+*.db
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Env files
+.env
+backend/.env
+frontend/.env
+
+# Local tooling
+.local/

@@ -2,6 +2,34 @@
 
 A full-stack personal finance project built from the requirements in `DLMCSPE01_Shazam_saifi_Project_Software_Engineering_10249076.docx`.
 
+## Quick run guide
+
+1. Start the backend:
+
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+uvicorn app.main:app --reload
+```
+
+2. Start the frontend in a new terminal:
+
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+3. Open the app and API docs:
+
+- Frontend: `http://127.0.0.1:5173`
+- Backend API: `http://127.0.0.1:8000`
+- Swagger docs: `http://127.0.0.1:8000/docs`
+
 ## Included features
 
 - User registration and login with JWT authentication

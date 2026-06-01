@@ -47,6 +47,23 @@ The frontend runs at `http://127.0.0.1:5173`.
 - Backend API: `http://127.0.0.1:8000`
 - Swagger docs: `http://127.0.0.1:8000/docs`
 
+## Switching to PostgreSQL
+
+Update `backend/.env`:
+
+```env
+DATABASE_URL=postgresql+psycopg://postgres:password@localhost:5432/smart_budget
+```
+
+Then install/start PostgreSQL locally and restart the backend.
+
+## Test commands
+
+```bash
+cd backend
+pytest
+```
+
 ## Included features
 
 - User registration and login with JWT authentication
@@ -92,48 +109,6 @@ uvicorn app.main:app --reload
 
 The API will start at `http://127.0.0.1:8000` and docs will be available at `http://127.0.0.1:8000/docs`.
 
-### Backend environment
-
-Create `backend/.env` from `backend/.env.example`:
-
-```bash
-cd backend
-cp .env.example .env
-```
-
-Typical local values:
-
-```env
-DATABASE_URL=sqlite:///./smart_budget.db
-SECRET_KEY=change-this-secret-key
-ACCESS_TOKEN_EXPIRE_MINUTES=60
-```
-
-## Frontend setup
-
-```bash
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-```
-
-The React app will run at `http://127.0.0.1:5173`.
-
-### Frontend environment
-
-Create `frontend/.env` from `frontend/.env.example`:
-
-```bash
-cd frontend
-cp .env.example .env
-```
-
-Typical local value:
-
-```env
-VITE_API_BASE_URL=http://127.0.0.1:8000
-```
 
 ## Switching to PostgreSQL
 
@@ -152,12 +127,6 @@ cd backend
 pytest
 ```
 
-Optional frontend build check:
-
-```bash
-cd frontend
-npm run build
-```
 
 ## Core API routes
 

@@ -96,38 +96,6 @@ frontend/
 README.md
 ```
 
-## Backend setup
-
-```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-uvicorn app.main:app --reload
-```
-
-The API will start at `http://127.0.0.1:8000` and docs will be available at `http://127.0.0.1:8000/docs`.
-
-
-## Switching to PostgreSQL
-
-Update `backend/.env`:
-
-```env
-DATABASE_URL=postgresql+psycopg://postgres:password@localhost:5432/smart_budget
-```
-
-Then install/start PostgreSQL locally and restart the backend.
-
-## Test commands
-
-```bash
-cd backend
-pytest
-```
-
-
 ## Core API routes
 
 - `POST /api/auth/register`

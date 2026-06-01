@@ -47,16 +47,6 @@ The frontend runs at `http://127.0.0.1:5173`.
 - Backend API: `http://127.0.0.1:8000`
 - Swagger docs: `http://127.0.0.1:8000/docs`
 
-## Switching to PostgreSQL
-
-Update `backend/.env`:
-
-```env
-DATABASE_URL=postgresql+psycopg://postgres:password@localhost:5432/smart_budget
-```
-
-Then install/start PostgreSQL locally and restart the backend.
-
 ## Test commands
 
 ```bash
